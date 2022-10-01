@@ -1,0 +1,42 @@
+@tailwind components;
+
+body {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+@media (min-height: 768px) {
+  body {
+    min-height: 100vh;
+    align-items: center;
+  }
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+:root {
+  --bg-success: #e3f7f0;
+  --color-success: #2d9a76;
+  --bg-error: #f7e6e3;
+  --color-error: #9a3f2d;
+  --bg-warning: rgb(246, 246, 193);
+  --color-warning: rgb(174, 174, 25);
+}
+
+@layer components {
+  .tab {
+    @apply relative flex flex-1 items-center justify-center gap-x-1 py-2 after:absolute after:bottom-0 after:block after:h-0.5 after:w-full after:rounded-sm after:bg-transparent after:content-[""];
+  }
+
+  .tab-selected {
+    @apply text-blue-500 after:bg-blue-500;
+  }
+}

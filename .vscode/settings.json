@@ -1,0 +1,27 @@
+{
+  "files.exclude": {
+    ".vscode/extensions.json": true,
+    ".vscode/launch.json": true,
+    "node_modules": true,
+    "dist": true,
+    "src/env.d.ts": true,
+    ".gitignore": true,
+    ".npmrc": true,
+    "astro.config.mjs": true,
+    "package.json": true,
+    "yarn.lock": true,
+    "README.md": true,
+    "tsconfig.json": true,
+    "public": true,
+    "tailwind.config.cjs": true,
+    ".prettierrc.json": true,
+    "prettier.config.js": true,
+    ".env": true,
+  },
+  "prettier.documentSelectors": [
+    "**/*.astro"
+  ],
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
