@@ -65,18 +65,16 @@ export default function AppContext(props: IContextComponent) {
       })
       .filter(input => input.message.trim() !== '')
 
-    const { data, error } = await supabase.from('testTable').insert(dataToSend)
+    const { data, error } = await supabase.from('messages').insert(dataToSend)
 
     if (error) {
       console.error(error)
-      showToast('error', 'Hubo un error, intentando enviando los datos al número')
+      showToast('error', 'Hubo un error, intenta enviando los datos al número')
     }
     if (data) {
       setInputs(initialState)
       showToast('success', 'Mensajes enviados')
     }
-
-    console.log('AAA')
 
     setIsSending(false)
   }
@@ -110,12 +108,12 @@ export default function AppContext(props: IContextComponent) {
     images.forEach(async image => {
       let imageName = `${Date.now()}_${uuid()}`
       const { data, error } = await supabase.storage
-        .from('testimages')
+        .from('screenshots')
         .upload(imageName, image.file)
 
       if (error) {
         console.error(error)
-        showToast('error', 'Hubo un error, intentando enviando los datos al número')
+        showToast('error', 'Hubo un error, intenta enviando los datos al número')
         setIsSending(false)
         return
       }
