@@ -59,9 +59,10 @@ export default function AppContext(props: IContextComponent) {
 
     const dataToSend = inputs
       .map(input => {
-        const hasUrl = /\S\.\S/g.test(input.value)
+        // const hasUrl = /\S\.\S/g.test(input.value)
 
-        return { message: input.value, hasUrl }
+        // return { message: input.value, hasUrl }
+        return { message: input.value }
       })
       .filter(input => input.message.trim() !== '')
 
