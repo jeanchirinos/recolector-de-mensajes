@@ -82,7 +82,7 @@ function Input({ id, value, index }: IProps) {
         type='text'
         id={String(id)}
         value={value}
-        placeholder='Agrega un mensaje'
+        placeholder='Agrega un mensaje SMS'
         className='w-0 flex-1 px-2 py-2 focus:outline-none'
         onChange={handleChange}
         onBlur={handleBlur}
